@@ -24,10 +24,18 @@ bottoneParola.addEventListener("click", function(){
 
     if(palindrome(parola.value)){
         // console.log("la parola è palindroma");
-        paragrafoParola.innerHTML = "La parola è palindroma";
+        if(Number(parola.value)){
+            paragrafoParola.innerHTML = "Il numero è palindromo";
+        }else{
+            paragrafoParola.innerHTML = "La parola è palindroma";
+        }
     }else{
+        if (Number(parola.value)) {
+            paragrafoParola.innerHTML = "Il numero non è palindromo";
+        } else {
+            paragrafoParola.innerHTML = "La parola non è palidroma";
+        }
         // console.log("la parola non è palindroma");
-        paragrafoParola.innerHTML = "La parola non è palidroma";
     }
 
 
