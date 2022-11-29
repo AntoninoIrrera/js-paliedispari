@@ -59,6 +59,16 @@ function getRandomNumber() {
 
 let numeroCasuale = getRandomNumber()
 
+function isOddOrEven(numeroSomma) {
+
+
+    if (numeroSomma % 2 == 0) {
+        return true;
+    } else {
+        return false;
+    }
+
+}
 
 
 bottonePariDispari.addEventListener("click", function(){
@@ -68,31 +78,25 @@ bottonePariDispari.addEventListener("click", function(){
     if(numberUser.value > 5 || numberUser.value < 1){
         paragrafoPariDispari.innerHTML = "Inserisci i numeri in un range da 1 a 5";
     }else{
+
         sumNumber = parseInt(numberUser.value) + numeroCasuale;
         
-        function isOddOrEven(){
-            
-            
-            if(sumNumber % 2 == 0){
-                return true;
-            }else{
-                return false;
-            }
-            
-        }
+
+   
+        let risultatoPariDispari = isOddOrEven(sumNumber); 
         
         paragrafoPariDispariOutput.innerHTML = "Il numero del Computer è: " + numeroCasuale;
         
-        if(evenOrOddUser.value == "pari" && isOddOrEven() == true){
+        if(evenOrOddUser.value == "pari" && risultatoPariDispari == true){
             // console.log("L'utente ha vinto");
             paragrafoPariDispari.innerHTML  = "L'utene ha vinto";
-        }else if(evenOrOddUser.value == "dispari" && isOddOrEven() == true){
+        }else if(evenOrOddUser.value == "dispari" && risultatoPariDispari == true){
             // console.log("il computer ha vinto");
             paragrafoPariDispari.innerHTML = "Il computer ha vinto";
-        }else if(evenOrOddUser.value == "pari" && isOddOrEven() == false){
+        }else if(evenOrOddUser.value == "pari" && risultatoPariDispari == false){
             // console.log("il computer ha vinto");
             paragrafoPariDispari.innerHTML = "Il computer ha vinto";
-        }else if(evenOrOddUser.value == "dispari" && isOddOrEven() == false){
+        }else if(evenOrOddUser.value == "dispari" && risultatoPariDispari == false){
             // console.log("l'utente ha vinto");
             paragrafoPariDispari.innerHTML = "L'utene ha vinto";
         }
