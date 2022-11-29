@@ -44,7 +44,7 @@ const evenOrOddUser = document.getElementById("oddOrEven");
 const numberUser = document.getElementById("numberUser");
 const bottonePariDispari = document.querySelector("a.btn-secondary");
 const paragrafoPariDispari = document.getElementById("pari_dispari");
-const paragrafoPariDispariOutput = document.getElementById("pari_dispari_output");
+const ul = document.querySelector("ul");
 
 bottonePariDispari.addEventListener("click", function(){
 
@@ -71,7 +71,17 @@ bottonePariDispari.addEventListener("click", function(){
     
     }
 
-    paragrafoPariDispariOutput.innerHTML = "Scelta utente: " + evenOrOddUser.value + " Numero utente: " + numberUser.value + " Generazione numero casuale: " + numeroCasuale + " Somma dei numeri: " + sumNumber + " Somma se è pari(true) o dispari(false): " + isOddOrEven();
+    const valoriLista = [evenOrOddUser.value, numberUser.value, numeroCasuale, sumNumber, isOddOrEven()];
+
+    for(let i = 0; i < 5; i++){
+        
+        let li = document.createElement("li");
+        ul.append(li);
+        li.append(valoriLista[i]); 
+        //paragrafoPariDispariOutput.innerHTML = "Scelta utente: " + evenOrOddUser.value + " Numero utente: " + numberUser.value + " Generazione numero casuale: " + numeroCasuale + " Somma dei numeri: " + sumNumber + " Somma se è pari(true) o dispari(false): " + isOddOrEven();
+    
+    
+    }
 
 
 

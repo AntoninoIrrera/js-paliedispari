@@ -17,24 +17,28 @@
 
     <main>
         <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <h1>Palindroma</h1>
-                    <h2>Inserisci una parola per vedere se è palindroma o meno</h2>
-                    <label for="parola">Inserisci la parola</label>
-                    <input type="text" name="parola" id="parola">
-                    <a href="#" class="btn btn-primary">Invia</a>
-                    <p id="parola_palindroma"></p>
+            <div class="row text-center">
+                <div class="col-12 mt-5">
+                    <h1 class="mt-3">Palindroma</h1>
+                    <h2 class="mt-3">Inserisci una parola per vedere se è palindroma o meno</h2>
+                    <div class="my-5">
+                        <label for="parola">Inserisci la parola</label>
+                        <input type="text" name="parola" id="parola">
+                        <a href="#" class="btn btn-primary">Invia</a>
+                    </div>
+                    <p class="text-bg-info text-dark" id="parola_palindroma"></p>
                 </div>
-                <div class="col-12">
-                    <h1>Pari o Dispari</h1>
-                    <label for="oddOrEven">Scegli pari o dispari</label>
-                    <label for="numberUser">Scegli un numero tra 1 e 5</label>
-                    <input type="text" name="oddOrEven" id="oddOrEven">
-                    <input type="number" name="numberUser" id="numberUser">
-                    <a href="#" class="btn btn-secondary">Invio</a>
-                    <p id="pari_dispari_output"></p>
-                    <p id="pari_dispari"></p>
+                <div class="col-12 mt-5">
+                    <h1 class="mt-3">Pari o Dispari</h1>
+                    <div class="my-5">
+                        <label for="oddOrEven">Scegli pari o dispari</label>
+                        <input type="text" name="oddOrEven" id="oddOrEven">
+                        <label for="numberUser">Scegli un numero tra 1 e 5</label>
+                        <input type="number" name="numberUser" id="numberUser">
+                        <a href="#" class="btn btn-secondary">Invio</a>
+                    </div>
+                    <ul class="list-unstyled"></ul>
+                    <p class="text-bg-danger text-dark fs-1 fw-bold" id="pari_dispari"></p>
                 </div>
             </div>
         </div>
