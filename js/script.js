@@ -2,7 +2,7 @@
 
 // Palindroma 
 
-/*
+
 function palindrome(str) {
     let re = /[^A-Za-z0-9]/g;
     let lowRegStr = str.toLowerCase().replace(re, '');
@@ -19,7 +19,7 @@ if(palindrome(parola)){
     console.log("la parola non è palindroma");
 }
 
-*/
+
 // ------------------------
 
 
