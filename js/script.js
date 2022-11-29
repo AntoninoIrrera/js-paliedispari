@@ -63,35 +63,41 @@ let numeroCasuale = getRandomNumber()
 
 bottonePariDispari.addEventListener("click", function(){
     
-    let sumNumber = parseInt(numberUser.value) + numeroCasuale;
+    let sumNumber;
     
-    function isOddOrEven(){
-    
-    
-        if(sumNumber % 2 == 0){
-            return true;
-        }else{
-            return false;
+    if(numberUser.value > 5 || numberUser.value < 1){
+        paragrafoPariDispari.innerHTML = "Inserisci i numeri in un range da 1 a 5";
+    }else{
+        sumNumber = parseInt(numberUser.value) + numeroCasuale;
+        
+        function isOddOrEven(){
+            
+            
+            if(sumNumber % 2 == 0){
+                return true;
+            }else{
+                return false;
+            }
+            
         }
-    
+        
+        paragrafoPariDispariOutput.innerHTML = "Il numero del Computer è: " + numeroCasuale;
+        
+        if(evenOrOddUser.value == "pari" && isOddOrEven() == true){
+            // console.log("L'utente ha vinto");
+            paragrafoPariDispari.innerHTML  = "L'utene ha vinto";
+        }else if(evenOrOddUser.value == "dispari" && isOddOrEven() == true){
+            // console.log("il computer ha vinto");
+            paragrafoPariDispari.innerHTML = "Il computer ha vinto";
+        }else if(evenOrOddUser.value == "pari" && isOddOrEven() == false){
+            // console.log("il computer ha vinto");
+            paragrafoPariDispari.innerHTML = "Il computer ha vinto";
+        }else if(evenOrOddUser.value == "dispari" && isOddOrEven() == false){
+            // console.log("l'utente ha vinto");
+            paragrafoPariDispari.innerHTML = "L'utene ha vinto";
+        }
+        
     }
-    
-    paragrafoPariDispariOutput.innerHTML = "Il numero del Computer è: " + numeroCasuale;
-    
-    if(evenOrOddUser.value == "pari" && isOddOrEven() == true){
-        // console.log("L'utente ha vinto");
-        paragrafoPariDispari.innerHTML  = "L'utene ha vinto";
-    }else if(evenOrOddUser.value == "dispari" && isOddOrEven() == true){
-        // console.log("il computer ha vinto");
-        paragrafoPariDispari.innerHTML = "Il computer ha vinto";
-    }else if(evenOrOddUser.value == "pari" && isOddOrEven() == false){
-        // console.log("il computer ha vinto");
-        paragrafoPariDispari.innerHTML = "Il computer ha vinto";
-    }else if(evenOrOddUser.value == "dispari" && isOddOrEven() == false){
-        // console.log("l'utente ha vinto");
-        paragrafoPariDispari.innerHTML = "L'utene ha vinto";
-    }
-    
         
 
 })
