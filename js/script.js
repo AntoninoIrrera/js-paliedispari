@@ -49,22 +49,22 @@ const evenOrOddUser = document.getElementById("oddOrEven");
 const numberUser = document.getElementById("numberUser");
 const bottonePariDispari = document.querySelector("a.btn-secondary");
 const paragrafoPariDispari = document.getElementById("pari_dispari");
-const ul = document.querySelector("ul");
+const paragrafoPariDispariOutput = document.getElementById("pari_dispari_output");
+
+
+function getRandomNumber() {
+    let numeroCasuale = Math.floor(Math.random() * 5 + 1);
+    return numeroCasuale;
+}
+
+let numeroCasuale = getRandomNumber()
+
+
 
 bottonePariDispari.addEventListener("click", function(){
-
-    function getRandomNumber() {
-
-        let numeroCasuale = Math.floor(Math.random() * 5 + 1);
-
-        return numeroCasuale;
-    }
-
-    let numeroCasuale = getRandomNumber()
-
-
+    
     let sumNumber = parseInt(numberUser.value) + numeroCasuale;
-
+    
     function isOddOrEven(){
     
     
@@ -75,21 +75,9 @@ bottonePariDispari.addEventListener("click", function(){
         }
     
     }
-
-    const valoriLista = [evenOrOddUser.value, numberUser.value, numeroCasuale, sumNumber, isOddOrEven()];
-
-    for(let i = 0; i < 5; i++){
-        
-        let li = document.createElement("li");
-        ul.append(li);
-        li.append(valoriLista[i]); 
-        //paragrafoPariDispariOutput.innerHTML = "Scelta utente: " + evenOrOddUser.value + " Numero utente: " + numberUser.value + " Generazione numero casuale: " + numeroCasuale + " Somma dei numeri: " + sumNumber + " Somma se è pari(true) o dispari(false): " + isOddOrEven();
     
+    paragrafoPariDispariOutput.innerHTML = "Il numero del Computer è: " + numeroCasuale;
     
-    }
-
-
-
     if(evenOrOddUser.value == "pari" && isOddOrEven() == true){
         // console.log("L'utente ha vinto");
         paragrafoPariDispari.innerHTML  = "L'utene ha vinto";
@@ -103,8 +91,8 @@ bottonePariDispari.addEventListener("click", function(){
         // console.log("l'utente ha vinto");
         paragrafoPariDispari.innerHTML = "L'utene ha vinto";
     }
-
     
+        
 
 })
 
